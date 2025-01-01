@@ -14,6 +14,7 @@ export default function Home() {
       <section className="">
         <WeddingPackagesWrapper show="popular" type="slider" />
       </section>
+
       <section className="container mx-auto flex flex-col">
         <h2 className="text-3xl font-bold max-w-md mx-auto text-center mb-8">
           Alasan Mereka Memilih Wedding Package Samawa
@@ -63,6 +64,22 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </section>
+
+      <section className="container mx-auto flex flex-col">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold max-w-sm">
+            Our Latest & Best Wedding Packages
+          </h2>
+          <Link
+            href="/packages"
+            className="border border-dark1 px-5 py-3 text-center rounded-full font-semibold"
+          >
+            Explore All
+          </Link>
+        </div>
+        
+        <WeddingPackagesWrapper show="newest" type="grid" />
       </section>
     </main>
   );

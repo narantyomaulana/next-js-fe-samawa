@@ -8,7 +8,7 @@ type TPackage = {
   name: string;
   slug: string;
   price: number;
-  isPopular: 1 | 0;
+  is_popular: 1 | 0;
   thumbnail: string;
   about: string;
   city: TCity;
