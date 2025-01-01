@@ -1,23 +1,38 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-
   images: {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "example.com",
-        port: '',
-        pathname: "/image/upload/**",
+        hostname: "be-samawa.test",
+        port: "", // Jika port kosong, Anda bisa menghapusnya
+        pathname: "/**", // Memastikan semua path diizinkan
       },
     ],
   },
 
-  webpack: (config) => {
+  webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            // Opsional: Anda bisa menambahkan pengaturan lain, seperti svgo
+            svgo: true, // Aktifkan optimasi SVG
+            prettier: false, // Nonaktifkan format otomatis
+            svgoConfig: {
+              plugins: [
+                {
+                  name: "removeViewBox",
+                  active: false, // Biarkan viewBox tetap ada untuk fleksibilitas scaling
+                },
+              ],
+            },
+          },
+        },
+      ],
     });
 
     return config;
