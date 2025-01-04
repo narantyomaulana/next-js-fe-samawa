@@ -3,5 +3,5 @@ export type TCity = {
   name: string;
   slug: string;
   icon: string;
-  weddingPacakges_count: number;
+  wedding_packages_count: number;
 };

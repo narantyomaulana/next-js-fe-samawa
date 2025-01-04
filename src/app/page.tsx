@@ -5,6 +5,7 @@ import CreditCard from "@/assets/images/credit-card.svg";
 import HomeTown from "@/assets/images/pink-hometown.svg";
 import Link from "next/link";
 import Image from "next/image";
+import Cities from "@/components/Cities";
 
 export default function Home() {
   return (
@@ -78,8 +79,25 @@ export default function Home() {
             Explore All
           </Link>
         </div>
-        
+
         <WeddingPackagesWrapper show="newest" type="grid" />
+      </section>
+
+      <section className="bg-light2 py-16">
+        <div className="container px-32 mx-auto">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-3xl font-bold max-w-sm">
+              Browse Packages City Recomendation
+            </h2>
+            <Link
+              href={`${process.env.HOST_APP}/cities`}
+              className="border border-dark1 px-5 py-3 text-center rounded-full font-semibold"
+            >
+              Explore All
+            </Link>
+          </div>
+          <Cities />
+        </div>
       </section>
     </main>
   );
