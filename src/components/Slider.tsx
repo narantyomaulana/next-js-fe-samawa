@@ -23,26 +23,35 @@ function Slider({ children, swiperClassName, swiperSliderClassName }: Props) {
       modules={[Navigation, A11y]}
       className={swiperClassName}
     >
-      {Children.toArray(children).map((item: any) => {
-        return (
-          <SwiperSlide className={swiperSliderClassName} key={item.key}>
-            {item}
-          </SwiperSlide>
-        );
+      {Children.toArray(children).map((item) => {
+        if (React.isValidElement(item)) {
+          return (
+            <SwiperSlide className={swiperSliderClassName} key={item.key}>
+              {item}
+            </SwiperSlide>
+          );
+        }
+        return null;
       })}
-      {Children.toArray(children).map((item: any) => {
-        return (
-          <SwiperSlide className={swiperSliderClassName} key={item.key}>
-            {item}
-          </SwiperSlide>
-        );
+      {Children.toArray(children).map((item) => {
+        if (React.isValidElement(item)) {
+          return (
+            <SwiperSlide className={swiperSliderClassName} key={item.key}>
+              {item}
+            </SwiperSlide>
+          );
+        }
+        return null;
       })}
-      {Children.toArray(children).map((item: any) => {
-        return (
-          <SwiperSlide className={swiperSliderClassName} key={item.key}>
-            {item}
-          </SwiperSlide>
-        );
+      {Children.toArray(children).map((item) => {
+        if (React.isValidElement(item)) {
+          return (
+            <SwiperSlide className={swiperSliderClassName} key={item.key}>
+              {item}
+            </SwiperSlide>
+          );
+        }
+        return null;
       })}
     </Swiper>
   );

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import thousands from "@/libs/thousands";
 
-type Props = {};
+type Props = object;
 
 function Content({ data }: { data: TCity[] }) {
   return (

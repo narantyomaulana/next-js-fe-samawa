@@ -1,6 +1,6 @@
 function thousands(value: number = 0): string {
   const parseFloat2 = parseFloat(String(value)).toFixed(2);
-  let parts = Number(parseFloat2 || 0)
+  const parts = Number(parseFloat2 || 0)
     .toString()
     .split(".");
 

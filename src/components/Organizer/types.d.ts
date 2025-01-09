@@ -1,1 +1,1 @@
-export type TOrganizer = {};
+export type TOrganizer = object;

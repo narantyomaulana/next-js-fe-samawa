@@ -6,9 +6,7 @@ import logoSrc from "@/assets/images/logo-samawa.svg";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-type Props = {};
-
-function Header(props: Props) {
+function Header() {
   const pathname = usePathname();
 
   const mainMenus = [
@@ -43,7 +41,6 @@ function Header(props: Props) {
         <span className="text-2xl font-bold cursor-default">Samawa</span>
       </span>
       <ul className="flex gap-x-10">
-
         {mainMenus.map((menu) => {
           let isActive = false;
           if (!!menu.slug) {
@@ -64,12 +61,11 @@ function Header(props: Props) {
                 ].join(" ")}
                 aria-current={isActive ? "true" : "false"}
               >
-              {menu.label}
+                {menu.label}
               </Link>
             </li>
           );
         })}
-
       </ul>
 
       <ul className="flex gap-x-4">
